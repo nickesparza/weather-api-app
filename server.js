@@ -23,7 +23,6 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 // to serve files from public statically
 app.use(express.static('public'))
-
 app.use('/weather', weatherRoutes)
 
 app.get('/', (req, res) => {
