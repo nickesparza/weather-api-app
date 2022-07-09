@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
     // console.log(req.body)
     // set target URL to a string since we can't template literal inside of a fetch request
-    const targetUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${req.body.zip},us&units=imperial&appid=7491e9be98eb7aafc1c275a2ef552378`
+    const targetUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${req.body.zip},us&units=imperial&appid=${process.env.API_KEY}`
     // save whatever comes back, asynchronously
     const response = await fetch(targetUrl)
     // get a JSON object with the response data so it can be manipulated
