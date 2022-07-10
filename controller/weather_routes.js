@@ -24,10 +24,17 @@ router.post('/', async (req, res) => {
     if (body.cod === 200) {
         body.main.temp = Math.floor(body.main.temp)
         body.main.feels_like = Math.floor(body.main.feels_like)
+        body.main.temp_max = Math.floor(body.main.temp_max)
+        body.main.temp_min = Math.floor(body.main.temp_min)
+        if (body.main.temp >= 90) {
+            body.main.hot = true
+        } else if (body.main.temp <= 40) {
+            body.main.cold = true
+        }
     }
     // console.log(body)
     // render the show page and send the whole body and two other keys to represent just the time
-    res.render('show', { body: body, hours: date.getHours(), minutes: date.getMinutes() })
+    res.render('show', { body: body, time: date.toLocaleTimeString() })
 })
 
 module.exports = router

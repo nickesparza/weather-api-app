@@ -6,11 +6,23 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h1 {
     font-size: 4em;
     color: white
+}
+
+h2 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 2em;
+    font-weight: bold;
 }
 
 div {
@@ -19,11 +31,12 @@ div {
 
 input {
     width: 50%;
-    margin: 4px 0;
+    margin: 8px 0;
     padding: 10px;
     box-sizing: border-box;
+    min-width: fit-content;
     font-size: 1.1em;
-  }
+}
 
 input[type="submit"] {
     background-color: rgb(31, 59, 83);
@@ -39,4 +52,14 @@ input[type="submit"]:hover {
 
 .container {
     align-self: center;
+}
+
+.card {
+    background: none;
+    border: 5px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 50px;
+    margin: 100px;
+    max-width: 50%;
 }
